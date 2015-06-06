@@ -13,18 +13,6 @@ import com.akharon.game.basics.Sprite;
 public class GameBasicsMockTest {
 	   @Rule
 	    public final JUnitRuleMockery context = new JUnitRuleMockery();
-
-	    @Test
-	    public void samplemock() throws Exception {
-	        
-	        final Sprite sprite = context.mock(Sprite.class);
-
-	        context.checking(new Expectations() {{
-	            oneOf(sprite).setHeight(0);
-	        }});
-
-	        final SampleMock gameBasics = new SampleMock(sprite);
-	    }
 	   
 	    @Test
 	    public void productFound() throws Exception {
@@ -32,8 +20,8 @@ public class GameBasicsMockTest {
 	        final Sprite sprite = context.mock(Sprite.class);
 
 	        context.checking(new Expectations() {{
-	        	oneOf(sprite).setPosX(with(2));
-	            oneOf(sprite).setPosY(with(2));
+	        	oneOf(sprite).setPosX(with(1));
+	            oneOf(sprite).setPosY(with(1));
 	            oneOf(sprite).setHeight(with(2));
 	            oneOf(sprite).setWidth(with(2));
 	        }});
