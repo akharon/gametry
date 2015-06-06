@@ -29,13 +29,16 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics;
+package com.akharon.spaceinvaders;
+
+import com.akharon.game.basics.Sprite;
 
 /**
  * @author akharon
  *
  */
-public class SpriteEntity implements Sprite {
+public class SpaceInvadersSprite implements Sprite {
+
 	private int verticalSpeed;
 	private int horizontalSpeed;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2020 JGT_MKYR Project
+ * Copyright (c) 2002-2010 JGT_MKYR Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,45 +29,14 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics;
+
+package com.akharon.spaceinvaders;
+
 
 /**
  * @author akharon
  *
  */
-public interface GameBasics {
-	
-	public boolean init();
-	
-	public void deInit();
-	
-	public void mainLoop();
-	
-	/**
-	 * @param sprite the spriteList to add
-	 */
-	public void addSprite(Sprite sprite);
-	
-	/**
-	 * @param sprite the spriteList to remove
-	 */
-	public void removeSprite(Sprite sprite);
-	
-	public int getSizeOfSpriteList();
+public class Box extends SpaceInvadersSprite {
 
-	/**
-	 * @param world the world to set
-	 */
-	public void setWorld(World world);
-	
-	public void clearScreen();
-	
-	public void drawScreen();
-	
-	public void inputHandler();
-	
-	public void setFPS();
-	public void setMessage();
-	public void printMessage();
-	public void printScore();
 }

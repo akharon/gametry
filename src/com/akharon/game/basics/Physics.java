@@ -44,7 +44,9 @@ public interface Physics {
 	
 	public void setGravity();
 	
+	public void enableFriction();
+	public void disableFriction();
 	
-	public void updateSpriteState(Sprite sprite);
-	
+	public void setFriction();
+
 }

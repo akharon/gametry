@@ -29,38 +29,45 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics.test;
+package com.akharon.spaceinvaders.tests;
 
+import static org.junit.Assert.*;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.jmock.Expectations;
-import org.jmock.integration.junit4.JUnitRuleMockery;
 
-import com.akharon.game.basics.GameBasics;
-import com.akharon.game.basics.Sprite;
+import com.akharon.spaceinvaders.SpaceInvadersSprite;
 
 /**
  * @author akharon
  *
  */
-public class GameBasicsMockTest {
-	   @Rule
-	    public final JUnitRuleMockery context = new JUnitRuleMockery();
-	   
-	    @Test
-	    public void testGameBasicsInterface() throws Exception {
-	        
-	        final Sprite sprite = context.mock(Sprite.class);
+public class SpaceInvadersSpriteTest {
 
-	        context.checking(new Expectations() {{
-	        	oneOf(sprite).setPosX(with(1));
-	            oneOf(sprite).setPosY(with(1));
-	            oneOf(sprite).setHeight(with(2));
-	            oneOf(sprite).setWidth(with(2));
-	        }});
-
-	        final GameBasics gameBasics = new GameBasics();
-	        gameBasics.addSprite(sprite, 1,1,2,2);
-	    }
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testisShown()
+	{
+		final SpaceInvadersSprite sprite = new SpaceInvadersSprite();
+		assertEquals(false, sprite.isShown());
+	}
+	
+	@Test
+	public void testdraw()
+	{
+		final SpaceInvadersSprite sprite = new SpaceInvadersSprite();
+		sprite.draw(3,3);
+		assertEquals(3, sprite.getPosX());
+		assertEquals(3, sprite.getPosY());
+	}
+	
+	@Test
+	public void testcollided()
+	{
+		final SpaceInvadersSprite sprite = new SpaceInvadersSprite();
+		assertEquals(false, sprite.collided());
+	}
 }

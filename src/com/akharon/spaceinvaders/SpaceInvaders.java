@@ -31,21 +31,125 @@
  */
 package com.akharon.spaceinvaders;
 
+import java.util.Vector;
+
 import com.akharon.game.basics.GameBasics;
+import com.akharon.game.basics.Sprite;
+import com.akharon.game.basics.World;
 
 /**
- * @author mustafakyr
+ * @author akharon
  *
  */
-public class SpaceInvaders {
+public class SpaceInvaders implements GameBasics{
+	
+	private int score;
+	private int fps; 
+	private String popUpMessage;
+	private Vector<Sprite> spriteList;
+	private World world;
+	
+	public SpaceInvaders()
+	{
+		spriteList = new Vector<Sprite>();
+	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		GameBasics game = new GameBasics();
-		game.init();
-		game.mainLoop();
+		SpaceInvaders spaceInvaders = new SpaceInvaders();
+		spaceInvaders.init();
+		spaceInvaders.mainLoop();
+	}
+	
+	/**
+	 * @param sprite the spriteList to add
+	 */
+	public void addSprite(Sprite sprite)
+	{	
+		spriteList.add(sprite);
+	}
+	
+	/**
+	 * @param sprite the spriteList to remove
+	 */
+	public void removeSprite(Sprite sprite)
+	{	
+		spriteList.remove(sprite);
+	}
+	
+	public int getSizeOfSpriteList()
+	{
+		return spriteList.size();
+	}
+
+	/**
+	 * @param world the world to set
+	 */
+	public void setWorld(World world) {
+		this.world = world;
+	}
+
+	@Override
+	public boolean init() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void deInit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mainLoop() {
+		// TODO Auto-generated method stub
+		this.clearScreen();
+		this.drawScreen();
+	}
+
+	@Override
+	public void setFPS() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void printMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void printScore() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void clearScreen() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void drawScreen() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void inputHandler() {
+		// TODO Auto-generated method stub
+		
 	}
 }

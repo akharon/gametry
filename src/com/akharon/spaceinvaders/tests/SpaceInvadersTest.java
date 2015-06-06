@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2020 JGT_MKYR Project
+ * Copyright (c) 2002-2010 JGT_MKYR Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,45 +29,31 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics;
+package com.akharon.spaceinvaders.tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.akharon.spaceinvaders.SpaceInvaders;
+import com.akharon.spaceinvaders.SpaceInvadersSprite;
 
 /**
  * @author akharon
  *
  */
-public interface GameBasics {
-	
-	public boolean init();
-	
-	public void deInit();
-	
-	public void mainLoop();
-	
-	/**
-	 * @param sprite the spriteList to add
-	 */
-	public void addSprite(Sprite sprite);
-	
-	/**
-	 * @param sprite the spriteList to remove
-	 */
-	public void removeSprite(Sprite sprite);
-	
-	public int getSizeOfSpriteList();
+public class SpaceInvadersTest {
 
-	/**
-	 * @param world the world to set
-	 */
-	public void setWorld(World world);
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
 	
-	public void clearScreen();
-	
-	public void drawScreen();
-	
-	public void inputHandler();
-	
-	public void setFPS();
-	public void setMessage();
-	public void printMessage();
-	public void printScore();
+	@Test
+	public void testcreateSprite() {
+		final SpaceInvaders game = new SpaceInvaders();
+		final SpaceInvadersSprite sprite = new SpaceInvadersSprite();
+		game.addSprite(sprite);
+		assertEquals(1, game.getSizeOfSpriteList());
+	}
 }

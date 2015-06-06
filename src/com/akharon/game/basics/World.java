@@ -29,45 +29,14 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics.test;
+package com.akharon.game.basics;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import com.akharon.game.basics.SpriteEntity;
-
-/**
- * @author akharon
- *
- */
-public class SpriteTest {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+public interface World {
 	
-	@Test
-	public void testisShown()
-	{
-		final SpriteEntity sprite = new SpriteEntity();
-		assertEquals(false, sprite.isShown());
-	}
+	public void setHeight(int height);
+	public void setWidth(int width);
 	
-	@Test
-	public void testdraw()
-	{
-		final SpriteEntity sprite = new SpriteEntity();
-		sprite.draw(3,3);
-		assertEquals(3, sprite.getPosX());
-		assertEquals(3, sprite.getPosY());
-	}
-	
-	@Test
-	public void testcollided()
-	{
-		final SpriteEntity sprite = new SpriteEntity();
-		assertEquals(false, sprite.collided());
-	}
+	public void setGroundLevel(int y);
+
+	public void setPhysics(Physics physics);
 }

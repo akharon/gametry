@@ -29,31 +29,48 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.akharon.game.basics.test;
+package com.akharon.spaceinvaders.tests;
 
-import static org.junit.Assert.*;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnitRuleMockery;
 
-import com.akharon.game.basics.GameBasics;
-import com.akharon.game.basics.SpriteEntity;
+import com.akharon.spaceinvaders.SpaceInvaders;
+import com.akharon.game.basics.Sprite;
+import com.akharon.game.basics.World;
 
 /**
  * @author akharon
  *
  */
-public class GameBasicsTest {
+public class SpaceInvadersMockTest {
+	   @Rule
+	    public final JUnitRuleMockery context = new JUnitRuleMockery();
+	   
+	    @Test
+	    public void testaddSprite() throws Exception {
+	        
+	        final Sprite sprite = context.mock(Sprite.class);
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testcreateSprite() {
-		final GameBasics game = new GameBasics();
-		final SpriteEntity sprite = new SpriteEntity();
-		game.addSprite(sprite, 0,0,0,0);
-		assertEquals(1, game.getSizeOfSpriteList());
-	}
+	        context.checking(new Expectations() {{
+	        	
+	        }});
+
+	        final SpaceInvaders spaceInvaders = new SpaceInvaders();
+	        spaceInvaders.addSprite(sprite);
+	    }
+	    
+	    @Test
+	    public void testaddWorld() throws Exception {
+	        
+	        final World world = context.mock(World.class);
+
+	        context.checking(new Expectations() {{
+	        }});
+
+	        final SpaceInvaders spaceInvaders = new SpaceInvaders();
+	        spaceInvaders.setWorld(world);
+	    }
 }
