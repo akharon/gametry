@@ -7,7 +7,6 @@ import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 
 import com.akharon.game.basics.GameBasics;
-import com.akharon.game.basics.SampleMock;
 import com.akharon.game.basics.Sprite;
 
 public class GameBasicsMockTest {
@@ -15,7 +14,7 @@ public class GameBasicsMockTest {
 	    public final JUnitRuleMockery context = new JUnitRuleMockery();
 	   
 	    @Test
-	    public void productFound() throws Exception {
+	    public void testGameBasicsInterface() throws Exception {
 	        
 	        final Sprite sprite = context.mock(Sprite.class);
 
