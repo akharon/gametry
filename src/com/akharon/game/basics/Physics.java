@@ -42,11 +42,10 @@ public interface Physics {
 	public void enableGravity();
 	public void disableGravity();
 	
-	public void setGravity();
-	
 	public void enableFriction();
 	public void disableFriction();
-	
-	public void setFriction();
+
+	void setGravity(int gravity);
+	void setFriction(int friction);
 
 }

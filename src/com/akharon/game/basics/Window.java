@@ -31,12 +31,21 @@
  */
 package com.akharon.game.basics;
 
-public interface World {
+public interface Window {
 	
 	public void setHeight(int height);
 	public void setWidth(int width);
 	
 	public void setGroundLevel(int y);
+	
+	public void setFPS(int fps);
+	public void setMessage(String msg);
+	public void setScore(int score);
+	
+	public void printMessage();
+	public void printScore();
+	
+	void inputKeyHandler(int keyEvent);
+	void inputMouseHandler(int mouseEvent);
 
-	public void setPhysics(Physics physics);
 }

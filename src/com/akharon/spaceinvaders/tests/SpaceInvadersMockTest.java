@@ -39,7 +39,7 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 
 import com.akharon.spaceinvaders.SpaceInvaders;
 import com.akharon.game.basics.Sprite;
-import com.akharon.game.basics.World;
+import com.akharon.game.basics.Window;
 
 /**
  * @author akharon
@@ -65,12 +65,18 @@ public class SpaceInvadersMockTest {
 	    @Test
 	    public void testaddWorld() throws Exception {
 	        
-	        final World world = context.mock(World.class);
+	        final Window window = context.mock(Window.class);
 
 	        context.checking(new Expectations() {{
+	        	oneOf(window).setFPS(with(0));
+	        	oneOf(window).setGroundLevel(with(0));
+	        	oneOf(window).setMessage(with("Hello World !"));
+	        	oneOf(window).setScore(with(0));
+	        	oneOf(window).setHeight(with(480));
+	        	oneOf(window).setWidth(with(640));
 	        }});
 
 	        final SpaceInvaders spaceInvaders = new SpaceInvaders();
-	        spaceInvaders.setWorld(world);
+	        spaceInvaders.initWindow(window);
 	    }
 }

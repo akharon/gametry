@@ -35,11 +35,11 @@ package com.akharon.game.basics;
  * @author akharon
  *
  */
-public interface GameBasics {
+public interface Game {
 	
-	public boolean init();
+	public void initWindow(Window window);
 	
-	public void deInit();
+	public void initPhysics(Physics physics);
 	
 	public void mainLoop();
 	
@@ -54,20 +54,9 @@ public interface GameBasics {
 	public void removeSprite(Sprite sprite);
 	
 	public int getSizeOfSpriteList();
-
-	/**
-	 * @param world the world to set
-	 */
-	public void setWorld(World world);
 	
 	public void clearScreen();
 	
 	public void drawScreen();
 	
-	public void inputHandler();
-	
-	public void setFPS();
-	public void setMessage();
-	public void printMessage();
-	public void printScore();
 }

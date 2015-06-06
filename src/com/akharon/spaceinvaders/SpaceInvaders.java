@@ -33,35 +33,24 @@ package com.akharon.spaceinvaders;
 
 import java.util.Vector;
 
-import com.akharon.game.basics.GameBasics;
+import com.akharon.game.basics.Game;
+import com.akharon.game.basics.Physics;
 import com.akharon.game.basics.Sprite;
-import com.akharon.game.basics.World;
+import com.akharon.game.basics.Window;
 
 /**
  * @author akharon
  *
  */
-public class SpaceInvaders implements GameBasics{
+public class SpaceInvaders implements Game{
 	
-	private int score;
-	private int fps; 
-	private String popUpMessage;
 	private Vector<Sprite> spriteList;
-	private World world;
+	private Window window;
+	private Physics physics;
 	
 	public SpaceInvaders()
 	{
 		spriteList = new Vector<Sprite>();
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		SpaceInvaders spaceInvaders = new SpaceInvaders();
-		spaceInvaders.init();
-		spaceInvaders.mainLoop();
 	}
 	
 	/**
@@ -84,55 +73,32 @@ public class SpaceInvaders implements GameBasics{
 	{
 		return spriteList.size();
 	}
-
-	/**
-	 * @param world the world to set
-	 */
-	public void setWorld(World world) {
-		this.world = world;
-	}
-
+	
 	@Override
-	public boolean init() {
-		// TODO Auto-generated method stub
-		return false;
+	public void initWindow(Window window)
+	{
+		this.window = window;
+		window.setFPS(0);
+		window.setMessage("Hello World !");
+		window.setGroundLevel(0);
+		window.setScore(0);
+		window.setHeight(480);
+		window.setWidth(640);
 	}
-
+	
 	@Override
-	public void deInit() {
-		// TODO Auto-generated method stub
-		
+	public void initPhysics(Physics physics)
+	{
+		this.physics = physics;
+		physics.enableGravity();
+		physics.setGravity(9);
 	}
-
+	
 	@Override
 	public void mainLoop() {
 		// TODO Auto-generated method stub
 		this.clearScreen();
 		this.drawScreen();
-	}
-
-	@Override
-	public void setFPS() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setMessage() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void printMessage() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void printScore() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -143,12 +109,6 @@ public class SpaceInvaders implements GameBasics{
 
 	@Override
 	public void drawScreen() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void inputHandler() {
 		// TODO Auto-generated method stub
 		
 	}
