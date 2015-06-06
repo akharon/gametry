@@ -38,6 +38,7 @@ import org.jmock.Expectations;
 import org.jmock.integration.junit4.JUnitRuleMockery;
 
 import com.akharon.spaceinvaders.SpaceInvaders;
+import com.akharon.game.basics.Physics;
 import com.akharon.game.basics.Sprite;
 import com.akharon.game.basics.Window;
 
@@ -63,7 +64,7 @@ public class SpaceInvadersMockTest {
 	    }
 	    
 	    @Test
-	    public void testaddWorld() throws Exception {
+	    public void testadInitWindow() throws Exception {
 	        
 	        final Window window = context.mock(Window.class);
 
@@ -78,5 +79,19 @@ public class SpaceInvadersMockTest {
 
 	        final SpaceInvaders spaceInvaders = new SpaceInvaders();
 	        spaceInvaders.initWindow(window);
+	    }
+	    
+	    @Test
+	    public void testadInitPhysics() throws Exception {
+	        
+	        final Physics physics = context.mock(Physics.class);
+
+	        context.checking(new Expectations() {{
+	        	oneOf(physics).enableGravity();
+	        	oneOf(physics).setGravity(9);
+	        }});
+
+	        final SpaceInvaders spaceInvaders = new SpaceInvaders();
+	        spaceInvaders.initPhysics(physics);
 	    }
 }
