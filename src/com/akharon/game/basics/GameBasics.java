@@ -25,12 +25,6 @@ public class GameBasics {
 		
 	}
 	
-	public void createSprite()
-	{
-		SpriteEntity sprite = new SpriteEntity();
-		this.addSprite(sprite, 0, 0, 0, 0);
-	}
-	
 	public void addSprite(Sprite sprite, int posX, int posY, int height, int width)
 	{
 		sprite.setPosX(posX);
